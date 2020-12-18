@@ -13,16 +13,16 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        Time0.text = t.ToString();
+        // Time0.text = t.ToString();
     }
 
     void Update()
     {
-        t -= a * Time.deltaTime;
-        Time0.text = Mathf.Round(t).ToString();
-        if (Mathf.RoundToInt(t) == -1 || Mathf.RoundToInt(t) == time + 1)
-        {
-            a *= -1;
-        }
+        // t -= a * Time.deltaTime;
+        // Time0.text = Mathf.Round(t).ToString();
+        // if (Mathf.RoundToInt(t) == -1 || Mathf.RoundToInt(t) == time + 1)
+        // {
+        //     a *= -1;
+        // }
     }
 }
