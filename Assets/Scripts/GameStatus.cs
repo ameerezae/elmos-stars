@@ -6,6 +6,7 @@ public class GameStatus : MonoBehaviour
 {
     private int teamZeroScore = 0;
     private int teamOneScore = 0;
+    public string turn = "TeamZero";
     [SerializeField] TextMeshProUGUI teamZeroScoreOnBoard;
     [SerializeField] TextMeshProUGUI teamOneScoreOnBoard;
 
@@ -26,15 +27,24 @@ public class GameStatus : MonoBehaviour
 
     public void AddToTeamZeroScore()
     {
-        Debug.Log(teamZeroScore);
         teamZeroScore++;
         teamZeroScoreOnBoard.text = teamZeroScore.ToString();
+        FindObjectOfType<players>().setTeamPosition(0, 0);
+        FindObjectOfType<players>().setTeamPosition(1, 1);
+
     }
 
     public void AddToTeamOneScore()
     {
-        Debug.Log(teamOneScore);
         teamOneScore++;
         teamOneScoreOnBoard.text = teamOneScore.ToString();
+
+        FindObjectOfType<players>().setTeamPosition(0, 0);
+        FindObjectOfType<players>().setTeamPosition(1, 1);
+    }
+
+    public void ToggleTurn()
+    {
+        turn = turn == "TeamOne" ? "TeamZero" : "TeamOne";
     }
 }

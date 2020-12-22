@@ -6,6 +6,8 @@ TagManager:
   tags:
   - mp
   - Ball
+  - TeamOne
+  - TeamZero
   layers:
   - Default
   - TransparentFX

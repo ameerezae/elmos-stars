@@ -10,9 +10,11 @@ public class players : MonoBehaviour
     public GameObject[] players1 = new GameObject[5];
     public GameObject ball;
     
-    void setTeamPosition(int position, int team)
+    public void setTeamPosition(int position, int team)
     {
+        Debug.Log("reseting");
         float z = -1.5f;
+        ball.transform.position = new Vector3(0, 0, z);
         if (team == 0)
         {
             switch (position)

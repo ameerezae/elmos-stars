@@ -15,17 +15,27 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 shootDirection;
 
+    private GameStatus _gameStatus;
+
     // Start is called before the first frame update
     void Awake()
     {
         mousePoint = GameObject.FindGameObjectWithTag("mp");
+        _gameStatus = FindObjectOfType<GameStatus>();
     }
 
     // Update is called once per frame
     void OnMouseUp()
     {
         Vector3 push = shootDirection * shootPower;
-        GetComponent<Rigidbody>().AddForce(push, ForceMode.Impulse);
+        Rigidbody PlayerObj = GetComponent<Rigidbody>();
+        _gameStatus.ToggleTurn();
+        _gameStatus.ToggleTurn();
+        if (PlayerObj.CompareTag(_gameStatus.turn))
+        {
+            _gameStatus.ToggleTurn();
+            PlayerObj.AddForce(push, ForceMode.Impulse);
+        }
     }
 
     private void OnMouseDrag()
