@@ -12,9 +12,9 @@ public class players : MonoBehaviour
     
     public void setTeamPosition(int position, int team)
     {
-        Debug.Log("reseting");
         float z = -1.5f;
         ball.transform.position = new Vector3(0, 0, z);
+        StopMoving();
         if (team == 0)
         {
             switch (position)
@@ -69,6 +69,22 @@ public class players : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public void StopMoving()
+    {
+        ball.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        foreach (var player in players0)
+        {
+            player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            player.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
+        }
+
+        foreach (var player in players1)
+        {
+            player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            player.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
+        }
     }
 
  

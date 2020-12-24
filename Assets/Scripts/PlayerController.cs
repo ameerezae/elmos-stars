@@ -57,4 +57,6 @@ public class PlayerController : MonoBehaviour
         mousePoint.transform.position = transform.position + ((dimxy / differnce) * currentDistance * -1);
         shootDirection = Vector3.Normalize(mousePoint.transform.position - transform.position);
     }
+
+    
 }

@@ -23,10 +23,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Elmos-Stars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Elmos-Stars/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/opScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/opScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/players.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/players.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/mats/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/mats/New Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/p00.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/p00.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/p10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/p10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +46,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/ScoreCount.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/players.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" />
       </list>
     </option>
   </component>
@@ -65,6 +68,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../ss\ss.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\amir\Desktop\ss" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -96,7 +107,8 @@
       <workItem from="1608138359290" duration="2786000" />
       <workItem from="1608306058612" duration="10444000" />
       <workItem from="1608321032513" duration="708000" />
-      <workItem from="1608643346736" duration="6734000" />
+      <workItem from="1608643346736" duration="8279000" />
+      <workItem from="1608838920499" duration="5141000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@ public class GameStatus : MonoBehaviour
     public string turn = "TeamZero";
     [SerializeField] TextMeshProUGUI teamZeroScoreOnBoard;
     [SerializeField] TextMeshProUGUI teamOneScoreOnBoard;
+    [SerializeField] TextMeshProUGUI winner;
 
     
     
@@ -17,6 +18,7 @@ public class GameStatus : MonoBehaviour
     {
         teamZeroScoreOnBoard.text = teamZeroScore.ToString();
         teamOneScoreOnBoard.text = teamOneScore.ToString();
+        winner.text = "";
     }
 
     // Update is called once per frame
@@ -29,6 +31,12 @@ public class GameStatus : MonoBehaviour
     {
         teamZeroScore++;
         teamZeroScoreOnBoard.text = teamZeroScore.ToString();
+        if (teamOneScore == 3)
+        {
+            winner.text = "Red Team Is Winner";
+            teamZeroScore = 0;
+            teamZeroScoreOnBoard.text = teamZeroScore.ToString();
+        }
         FindObjectOfType<players>().setTeamPosition(0, 0);
         FindObjectOfType<players>().setTeamPosition(1, 1);
 
@@ -38,9 +46,15 @@ public class GameStatus : MonoBehaviour
     {
         teamOneScore++;
         teamOneScoreOnBoard.text = teamOneScore.ToString();
-
+        if (teamOneScore == 3)
+        {
+            winner.text = "Yellow Team Is Winner";
+            teamOneScore = 0;
+            teamOneScoreOnBoard.text = teamOneScore.ToString();
+        }
         FindObjectOfType<players>().setTeamPosition(0, 0);
         FindObjectOfType<players>().setTeamPosition(1, 1);
+        
     }
 
     public void ToggleTurn()

@@ -13,4 +13,20 @@ public class GateZero : MonoBehaviour
             FindObjectOfType<GameStatus>().AddToTeamOneScore();
         }
     }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        moveOutFromGate(other);
+    }
+
+
+    private void moveOutFromGate(Collider obj)
+    {
+        if (!obj.CompareTag("Ball") &&
+            obj.GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0))
+        {
+            obj.transform.position += new Vector3(4, 0, 0);
+        }
+    }
 }
