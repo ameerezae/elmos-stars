@@ -23,13 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Elmos-Stars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Elmos-Stars/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/opScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/opScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/players.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/players.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/p00.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/p00.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/p10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/p10.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +41,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/ScoreCount.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Timer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/players.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GateOne.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GateZero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStatus.cs" />
       </list>
     </option>
   </component>
@@ -133,17 +127,21 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog" timestamp="1608307097806">
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog" timestamp="1608880963640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1608307097806" />
-    <state x="0" y="0" width="644" height="728" key="find.popup" timestamp="1608665161063">
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1608880963640" />
+    <state x="0" y="0" width="644" height="728" key="find.popup" timestamp="1608900025344">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" width="644" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1608665161063" />
-    <state x="347" y="176" key="run.anything.popup" timestamp="1608662635983">
+    <state x="0" y="0" width="644" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1608900025344" />
+    <state x="347" y="176" key="run.anything.popup" timestamp="1608881027534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="347" y="176" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608662635983" />
+    <state x="347" y="176" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608881027534" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1608897368757">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608897368757" />
   </component>
 </project>

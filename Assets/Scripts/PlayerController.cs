@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 push = shootDirection * shootPower;
         Rigidbody PlayerObj = GetComponent<Rigidbody>();
-        _gameStatus.ToggleTurn();
-        _gameStatus.ToggleTurn();
         if (PlayerObj.CompareTag(_gameStatus.turn))
         {
             _gameStatus.ToggleTurn();
