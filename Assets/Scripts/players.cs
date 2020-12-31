@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,11 +10,14 @@ public class players : MonoBehaviour
     public GameObject[] players0 = new GameObject[5];
     public GameObject[] players1 = new GameObject[5];
     public GameObject ball;
-    
+    public bool stopCounting;
+    public float t1, t2;
+    public AudioSource kick;
     public void setTeamPosition(int position, int team)
     {
         float z = -1.5f;
         ball.transform.position = new Vector3(0, 0, z);
+        FindObjectOfType<GameStatus>().goal = false;
         StopMoving();
         if (team == 0)
         {
@@ -68,7 +72,14 @@ public class players : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        t2 = stopCounting ? Time.time : 0 ;
+        if (t2 - t1 > 3)
+        {
+            StopMoving();
+            stopCounting = false;
+            t1 = 0;
+            t2 = 0;
+        }
     }
     
     public void StopMoving()
@@ -86,8 +97,6 @@ public class players : MonoBehaviour
             player.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, 0);
         }
     }
-
- 
 
     
 }

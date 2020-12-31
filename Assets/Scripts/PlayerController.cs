@@ -29,13 +29,18 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 push = shootDirection * shootPower;
         Rigidbody PlayerObj = GetComponent<Rigidbody>();
-        if (PlayerObj.CompareTag(_gameStatus.turn))
+        if (PlayerObj.CompareTag(_gameStatus.turn) && !FindObjectOfType<players>().stopCounting)
         {
+            
             _gameStatus.ToggleTurn();
             PlayerObj.AddForce(push, ForceMode.Impulse);
+            FindObjectOfType<GameStatus>().isItFirstShoot += 1;
+            FindObjectOfType<players>().stopCounting = true;
+            FindObjectOfType<players>().t1 = Time.time;
         }
+          
     }
-
+    
     private void OnMouseDrag()
     {
         
