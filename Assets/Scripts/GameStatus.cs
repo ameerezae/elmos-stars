@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 
 public class GameStatus : MonoBehaviour
 {
@@ -13,15 +14,15 @@ public class GameStatus : MonoBehaviour
     public string turn = "TeamZero";
     public int isItFirstShoot = 0;
     public bool goal;
+    public AudioSource goalSound;
+    public AudioSource whistle;
+    public AudioSource cheering;
     [SerializeField] TextMeshProUGUI teamZeroScoreOnBoard;
     [SerializeField] TextMeshProUGUI teamOneScoreOnBoard;
     [SerializeField] TextMeshProUGUI winner;
     [SerializeField] TextMeshProUGUI turnOnBoard;
     [SerializeField] TextMeshProUGUI turnTimeOnBoard;
     
-
-
-    // Start is called before the first frame update
     void Start()
     {
         teamZeroScoreOnBoard.text = teamZeroScore.ToString();
@@ -31,17 +32,21 @@ public class GameStatus : MonoBehaviour
         winner.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        FindObjectOfType<players>().showmask(turn == "TeamZero");
     }
+
 
     public void AddToTeamZeroScore()
     {
         if (FindObjectOfType<GameStatus>().isItFirstShoot > 1)
         {
+            goalSound.Play();
             teamZeroScore++;
             teamZeroScoreOnBoard.text = teamZeroScore.ToString();
+            
+            
         }
 
         isItFirstShoot = 0;
@@ -49,6 +54,7 @@ public class GameStatus : MonoBehaviour
         if (teamZeroScore == 3)
         {
             introduceWinner("Red");
+            cheering.Play();
         }
         
         StartCoroutine(ReArrangeTeams());
@@ -58,6 +64,7 @@ public class GameStatus : MonoBehaviour
     {
         if (FindObjectOfType<GameStatus>().isItFirstShoot > 1)
         {
+            goalSound.Play();
             teamOneScore++;
             teamOneScoreOnBoard.text = teamOneScore.ToString();
         }
@@ -68,7 +75,7 @@ public class GameStatus : MonoBehaviour
         if (teamOneScore == 3)
         {
             introduceWinner("Yellow");
-            
+            cheering.Play();
         }
 
         StartCoroutine(ReArrangeTeams());
@@ -92,12 +99,15 @@ public class GameStatus : MonoBehaviour
 
     public void ToggleTurn()
     {
+        
         StopAllCoroutines();
         turnTimer = 10;
         turn = turn == "TeamOne" ? "TeamZero" : "TeamOne";
         turnOnBoard.text = turn == "TeamZero" ? "Red" : "Yellow";
         StartCoroutine(ManageTurnTimer());
         StartCoroutine(ManageTurn());
+        
+        
     }
 
 
@@ -139,14 +149,16 @@ public class GameStatus : MonoBehaviour
     private IEnumerator PlayGameAgain()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("opScene");
+        FindObjectOfType<SceneLoader>().LoadVictoryScene();
     }
 
     private IEnumerator ReArrangeTeams()
     {
+        
         yield return new WaitForSeconds(2);
         goal = true;
         FindObjectOfType<players>().setTeamPosition(0, 0);
         FindObjectOfType<players>().setTeamPosition(1, 1);
+        whistle.Play();
     }
 }

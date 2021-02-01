@@ -62,14 +62,14 @@ public class players : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         setTeamPosition(0, 0);
         setTeamPosition(1, 1);
+        FindObjectOfType<GameStatus>().whistle.Play();
     }
 
-    // Update is called once per frame
     void Update()
     {
         t2 = stopCounting ? Time.time : 0 ;
@@ -84,6 +84,7 @@ public class players : MonoBehaviour
     
     public void StopMoving()
     {
+        ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         ball.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         foreach (var player in players0)
         {
@@ -98,5 +99,33 @@ public class players : MonoBehaviour
         }
     }
 
+    public void hidemask()
+    {
+        foreach (var player in players0)
+            player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        foreach (var player in players1)
+            player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+    }
+
+    public void showmask(bool firstTeam)
+    {
+        
+        if (firstTeam)
+        {
+            foreach (var player in players0)
+                player.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            foreach (var player in players1)
+                player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            foreach (var player in players1)
+                player.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            foreach (var player in players0)
+                player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
+
+    }
     
 }

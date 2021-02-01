@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,12 +32,13 @@ public class PlayerController : MonoBehaviour
         Rigidbody PlayerObj = GetComponent<Rigidbody>();
         if (PlayerObj.CompareTag(_gameStatus.turn) && !FindObjectOfType<players>().stopCounting)
         {
-            
+            FindObjectOfType<players>().hidemask(); 
             _gameStatus.ToggleTurn();
             PlayerObj.AddForce(push, ForceMode.Impulse);
             FindObjectOfType<GameStatus>().isItFirstShoot += 1;
             FindObjectOfType<players>().stopCounting = true;
             FindObjectOfType<players>().t1 = Time.time;
+            
         }
           
     }
@@ -61,5 +63,5 @@ public class PlayerController : MonoBehaviour
         shootDirection = Vector3.Normalize(mousePoint.transform.position - transform.position);
     }
 
-    
+
 }

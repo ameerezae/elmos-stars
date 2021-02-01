@@ -17,10 +17,6 @@ public class GateZero : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // if (other.gameObject.CompareTag("Ball") && other.gameObject.GetComponent<Rigidbody>().velocity.magnitude <0.1)
-        // {
-        //     FindObjectOfType<GameStatus>().AddToTeamOneScore();
-        // }
         moveOutFromGate(other);
     }
 

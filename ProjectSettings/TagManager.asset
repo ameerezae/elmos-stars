@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - TeamOne
   - TeamZero
+  - mask
   layers:
   - Default
   - TransparentFX
