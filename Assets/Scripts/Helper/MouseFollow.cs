@@ -8,13 +8,11 @@ public class MouseFollow : MonoBehaviour
     private Vector3 tempPos;
 
     public Camera cam;
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, offset);
     }
 
-    // Update is called once per frame
     void Update()
     {
         tempPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));

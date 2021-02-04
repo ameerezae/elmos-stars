@@ -16,28 +16,31 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 shootDirection;
 
-    private GameStatus _gameStatus;
-
-    // Start is called before the first frame update
+    private GamePresenter _gamePresenter;
+    
     void Awake()
     {
+        _gamePresenter = FindObjectOfType<GamePresenter>();
         mousePoint = GameObject.FindGameObjectWithTag("mp");
-        _gameStatus = FindObjectOfType<GameStatus>();
     }
 
-    // Update is called once per frame
+    
     void OnMouseUp()
     {
         Vector3 push = shootDirection * shootPower;
         Rigidbody PlayerObj = GetComponent<Rigidbody>();
-        if (PlayerObj.CompareTag(_gameStatus.turn) && !FindObjectOfType<players>().stopCounting)
+        PlayerItemPresenter player = GetComponent<PlayerItemPresenter>();
+        if (
+            player.side == _gamePresenter.gameModel.GetTurn() &&
+            !FindObjectOfType<GamePresenter>().stopCounting)
         {
-            FindObjectOfType<players>().hidemask(); 
-            _gameStatus.ToggleTurn();
+            _gamePresenter.HidePlayersTurnMask(); 
+            StopAllCoroutines();
+            StartCoroutine(ToggleTurnAfterStopingPlayers());
             PlayerObj.AddForce(push, ForceMode.Impulse);
-            FindObjectOfType<GameStatus>().isItFirstShoot += 1;
-            FindObjectOfType<players>().stopCounting = true;
-            FindObjectOfType<players>().t1 = Time.time;
+            _gamePresenter.shootsCount++;
+            _gamePresenter.stopCounting = true;
+            _gamePresenter.t1 = Time.time;
             
         }
           
@@ -61,6 +64,12 @@ public class PlayerController : MonoBehaviour
         float differnce = dimxy.magnitude;
         mousePoint.transform.position = transform.position + ((dimxy / differnce) * currentDistance * -1);
         shootDirection = Vector3.Normalize(mousePoint.transform.position - transform.position);
+    }
+
+    public IEnumerator ToggleTurnAfterStopingPlayers()
+    {
+        yield return new WaitForSeconds(3);
+        _gamePresenter.ToggleTurnForPlayers();
     }
 
 

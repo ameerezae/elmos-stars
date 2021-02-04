@@ -9,6 +9,8 @@ TagManager:
   - TeamOne
   - TeamZero
   - mask
+  - LeftGate
+  - RightGate
   layers:
   - Default
   - TransparentFX
